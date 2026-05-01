@@ -731,18 +731,29 @@
   <div class="contact-form-panel">
     <p class="eyebrow" style="color:var(--green-mid);">Free no-obligation quote</p>
     <h3 class="heading" style="font-size:clamp(1.4rem,2.5vw,2rem);">Tell us about<br><em>your garden.</em></h3>
-    <form class="form" style="margin-top:2rem;" action="https://formspree.io/f/greengrow1@outlook.com.au" method="POST" onsubmit="handleSubmit(event)">
-      <input type="hidden" name="_subject" value="New LawnCraft Enquiry"/>
-      <input type="hidden" name="_replyto" value=""/>
+    <form class="form" style="margin-top:2rem;" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="_subject" value="New LawnCraft Enquiry from Website"/>
       <div class="form-row">
-        <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane" required/></div>
-        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"/></div>
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="First Name" placeholder="Jane" required/>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="Last Name" placeholder="Smith"/>
+        </div>
       </div>
-      <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="04XX XXX XXX"/></div>
-      <div class="form-group"><label>Email Address</label><input type="email" placeholder="jane@example.com" required/></div>
       <div class="form-group">
-        <label>Service Required</label>
-        <select>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="Phone Number" placeholder="04XX XXX XXX"/>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="jane@example.com" required/>
+      </div>
+      <div class="form-group">
+        <label for="service">Service Required</label>
+        <select id="service" name="Service Required">
           <option value="">Select a service…</option>
           <option>Lawn Mowing</option>
           <option>Hedge Trimming</option>
@@ -757,7 +768,10 @@
           <option>Multiple Services / Not Sure</option>
         </select>
       </div>
-      <div class="form-group"><label>Tell Scott About Your Garden</label><textarea placeholder="Size of the area, current condition, frequency, any specific needs…"></textarea></div>
+      <div class="form-group">
+        <label for="message">Tell Scott About Your Garden</label>
+        <textarea id="message" name="Message" placeholder="Size of the area, current condition, frequency, any specific needs…"></textarea>
+      </div>
       <button type="submit" class="form-submit" id="submitBtn">Send Enquiry →</button>
       <div class="form-success" id="formSuccess">✅ Thanks! Scott will be in touch shortly.</div>
     </form>
